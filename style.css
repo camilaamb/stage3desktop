@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --ff-heading: 'Staatliches', cursive;
+  --ff-boding: 'Palanquin', sans-serif;
+  --bg-primary: #EFF1FF;
+  --bg-secundary: #8E9AAF;
+  --fc-primary: #ffffff;
+}
+
+body {
+  background-color: var(--bg-primary);
+}
+
+header {
+  background: var(--bg-secundary);
+
+  width: 100%;
+  height: 27.9rem;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+header img {
+  margin: 3.2rem auto;
+  width: 13.7rem;
+  height: 13.7rem;
+}
+
+header h1 {
+  font-family: var(--ff-heading);
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  color: var(--fc-primary);
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+  text-align: center; 
+  
+  background: #CBC0D3;
+  height: 4.9rem;
+  margin-bottom: 2.9rem;
+  padding: 1rem;
+}
+
+.text {
+  font-family: var(--ff-boding);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  color: var(--fc-primary);
+  text-align: center;
+  padding: 0 5rem;
+}
+
+main {
+  width: 100%;
+  
+  margin: 0 auto 6rem;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
+
+main p {
+  max-width: 30.5rem;
+  height: 7.5rem;
+  font-family: var(--ff-boding);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  color: #23053A;
+
+  text-align: center;
+  margin: 1.4rem 3.2rem 2.7rem;
+}
+
+.cards {
+  display: grid;
+  gap: 3.2rem;
+  margin-top: 5rem;
+
+  grid-template-areas: 
+  "A B C"
+  "D B E"
+  "D F E";
+}
+
+.cards div:nth-child(1) {
+  grid-area: A;
+}
+
+.cards div:nth-child(2) {
+  grid-area: D;
+}
+
+.cards div:nth-child(3) {
+  grid-area: B;
+}
+
+.cards div:nth-child(4) {
+  grid-area: F;
+}
+
+.cards div:nth-child(5) {
+  grid-area: C;
+}
+
+.cards div:nth-child(6) {
+  grid-area: E;
+}
+
+main .card {
+  position: relative;
+}
+
+main .card img {
+  border-radius: 2.0rem;
+  width: 100%;
+
+  animation-name: downtop;
+  animation-duration: 1s;
+}
+
+main .card h2 {
+  font-family: var(--ff-heading);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+  color: #4A4E69;
+
+  position: absolute;
+  top: 1.6rem;
+  right: 4.6rem;
+  background: #FEEAFA;
+  padding: 0 2.3rem;
+  border-radius: 2rem;
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+
+  animation-name: topdown;
+  animation-duration: 1s;
+}
+
+.footer {
+  font-family: var(--ff-boding);
+  margin-top: 3.5rem;
+}
+
+.footer #insta {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 900px) {
+  .page {
+    display: flex;
+  }
+
+  header {
+    width: 37.7rem;
+    height: auto;
+  }
+
+  main {
+    padding: 0 9.5rem 5rem;
+  }
+
+  main p {
+    display: none;
+  }
+
+  main .card h2 {
+    display: none;
+  }
+}
